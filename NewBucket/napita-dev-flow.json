@@ -1,4 +1,18 @@
 {
+  "externalControllerServices" : {
+    "1f04daae-02db-3b3d-842f-1ac46fcfb060" : {
+      "identifier" : "1f04daae-02db-3b3d-842f-1ac46fcfb060",
+      "name" : "JsonTreeReader"
+    },
+    "b7720e8e-15f6-3d28-8cd9-a678dba0d50e" : {
+      "identifier" : "b7720e8e-15f6-3d28-8cd9-a678dba0d50e",
+      "name" : "JsonRecordSetWriter"
+    },
+    "ca7f73c3-d589-339d-bdb4-7926404fc2b6" : {
+      "identifier" : "ca7f73c3-d589-339d-bdb4-7926404fc2b6",
+      "name" : "JsonRecordSetWriter Dev"
+    }
+  },
   "flow" : {
     "createdTimestamp" : 1779792632045,
     "description" : "",
@@ -7,5 +21,444 @@
     "name" : "napita dev flow",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c2a8db8b-c9f6-32a4-9de4-dafa045b9e5a",
+        "name" : "ConvertRecord",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "07e740d0-bd27-3c90-93f3-9c9a90cf31d9",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "50292805-54c7-3f8d-81ba-00e97ef742e8",
+        "name" : "UpdateRecord",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7c5e7ab4-2ff8-3dca-a24b-e823a7510d9c",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "aac4aeb3-6417-3224-9d03-7667a1e06fb4",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c2a8db8b-c9f6-32a4-9de4-dafa045b9e5a",
+        "name" : "ConvertRecord",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "50292805-54c7-3f8d-81ba-00e97ef742e8",
+        "name" : "UpdateRecord",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "ec2ecfc5-2b23-3be7-bd2f-75f8dad3dd2e",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "3be14c9b-1920-3a39-93be-5e993745c78f",
+        "name" : "GenerateFlowFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : {
+      "1f04daae-02db-3b3d-842f-1ac46fcfb060" : {
+        "identifier" : "1f04daae-02db-3b3d-842f-1ac46fcfb060",
+        "name" : "JsonTreeReader"
+      },
+      "b7720e8e-15f6-3d28-8cd9-a678dba0d50e" : {
+        "identifier" : "b7720e8e-15f6-3d28-8cd9-a678dba0d50e",
+        "name" : "JsonRecordSetWriter"
+      },
+      "ca7f73c3-d589-339d-bdb4-7926404fc2b6" : {
+        "identifier" : "ca7f73c3-d589-339d-bdb4-7926404fc2b6",
+        "name" : "JsonRecordSetWriter Dev"
+      }
+    },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7c5e7ab4-2ff8-3dca-a24b-e823a7510d9c",
+      "position" : {
+        "x" : 1056.0,
+        "y" : 480.0
+      }
+    } ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "logFileSuffix" : "",
+    "maxConcurrentTasks" : 1,
+    "name" : "test process group",
+    "outputPorts" : [ ],
+    "parameterContextName" : "test",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.7.2"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3be14c9b-1920-3a39-93be-5e993745c78f",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "GenerateFlowFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 448.0,
+        "y" : 16.0
+      },
+      "properties" : {
+        "File Size" : "0B",
+        "Batch Size" : "1",
+        "Unique FlowFiles" : "false",
+        "Custom Text" : "[\n  {\n    \"PRODUCT_ID\": \"27191\",\n    \"PRODUCT_TYPE_ID\": \"FINISHED_GOOD\",\n    \"PARENT_TYPE_ID\": \"GOOD\",\n    \"INTERNAL_NAME\": \"V_diamond-compass-coin-retail\",\n    \"SKU\": null,\n    \"UPCA\": null,\n    \"PRODUCT_NAME\": \"Diamond Compass Coin\",\n    \"BRAND_NAME\": \"gorjana\",\n    \"PARENT_PRODUCT_ID\": null,\n    \"PARENT_PRODUCT_NAME\": null,\n    \"PRIMARY_PRODUCT_CATEGORY_ID\": \"BROWSE_ROOT\",\n    \"PRIMARY_PRODUCT_CATEGORY_NAME\": \"Browse Root\",\n    \"FEATURE_COLOR\": null,\n    \"FEATURE_SIZE\": null,\n    \"VARIATION_TYPE\": \"Virtual\",\n    \"CURSOR_DATE\": \"1753363311075\"\n  }\n]",
+        "Character Set" : "UTF-8",
+        "Data Format" : "Text"
+      },
+      "propertyDescriptors" : {
+        "File Size" : {
+          "displayName" : "File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Size",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Unique FlowFiles" : {
+          "displayName" : "Unique FlowFiles",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Unique FlowFiles",
+          "sensitive" : false
+        },
+        "Mime Type" : {
+          "displayName" : "Mime Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Mime Type",
+          "sensitive" : false
+        },
+        "Custom Text" : {
+          "displayName" : "Custom Text",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Text",
+          "sensitive" : false
+        },
+        "Character Set" : {
+          "displayName" : "Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Character Set",
+          "sensitive" : false
+        },
+        "Data Format" : {
+          "displayName" : "Data Format",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Data Format",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "1 min",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.7.2"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "50292805-54c7-3f8d-81ba-00e97ef742e8",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "UpdateRecord",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 448.0,
+        "y" : 232.0
+      },
+      "properties" : {
+        "Record Writer" : "ca7f73c3-d589-339d-bdb4-7926404fc2b6",
+        "Record Reader" : "1f04daae-02db-3b3d-842f-1ac46fcfb060",
+        "/PRIMARY_KEY" : "${uuid}",
+        "Replacement Value Strategy" : "literal-value"
+      },
+      "propertyDescriptors" : {
+        "Record Writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Writer",
+          "sensitive" : false
+        },
+        "Record Reader" : {
+          "displayName" : "Record Reader",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Reader",
+          "sensitive" : false
+        },
+        "/PRIMARY_KEY" : {
+          "displayName" : "/PRIMARY_KEY",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "/PRIMARY_KEY",
+          "sensitive" : false
+        },
+        "Replacement Value Strategy" : {
+          "displayName" : "Replacement Value Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Replacement Value Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.UpdateRecord",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.7.2"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c2a8db8b-c9f6-32a4-9de4-dafa045b9e5a",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ConvertRecord",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 448.0,
+        "y" : 440.0
+      },
+      "properties" : {
+        "Include Zero Record FlowFiles" : "true",
+        "Record Writer" : "b7720e8e-15f6-3d28-8cd9-a678dba0d50e",
+        "Record Reader" : "1f04daae-02db-3b3d-842f-1ac46fcfb060"
+      },
+      "propertyDescriptors" : {
+        "Include Zero Record FlowFiles" : {
+          "displayName" : "Include Zero Record FlowFiles",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Include Zero Record FlowFiles",
+          "sensitive" : false
+        },
+        "Record Writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Writer",
+          "sensitive" : false
+        },
+        "Record Reader" : {
+          "displayName" : "Record Reader",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Reader",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.ConvertRecord",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "test" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "description" : "",
+      "inheritedParameterContexts" : [ ],
+      "name" : "test",
+      "parameters" : [ {
+        "description" : "",
+        "name" : "auth_x",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "auth_y",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "eyJraWQiOiJjM2JjODhmOS0zZGE5LTRlZmMtYjVhYi1hMGM4YzhhYjVmMGQiLCJhbGciOiJQUzUxMiJ9.eyJzdWIiOiJjbj12aW5heWFrLmJhc3Nhbixjbj11c2VycyxkYz1ob3R3YXgsZGM9aW8iLCJhdWQiOiJMZGFwUHJvdmlkZXIiLCJuYmYiOjE3MTExOTk0NDksImlzcyI6IkxkYXBQcm92aWRlciIsImdyb3VwcyI6W10sInByZWZlcnJlZF91c2VybmFtZSI6InZpbmF5YWsuYmFzc2FuIiwiZXhwIjoxNzExMjQyNjQ5LCJpYXQiOjE3MTExOTk0NDksImp0aSI6ImE3NGEzOWZhLTMwOTYtNDUzMy04Y2M1LWE5ZGNjMTc0MDc3YiJ9.fyBwuA9jXwbHLFzD1eo4nkhMgk0reEPp260QLM4IUWEW03Xz5PPHN8EctJyzouk_tLLJdXyDy1vVoIRmqqsCBjMWCK9MfuuA6E_hg2mevMGzKx_SC3RvQoIajCCM8JPDG7br_s-d5YWvFdbGQOsJMhOAFoXS6MvRDk_P1lFkpdK6N_Xf9UHqwI-Laq8t1lSEC7sTgZwBHAF38WMCqQHSZf0WBsiBe9O-wsjxSftf-PLE3QhfHUNarMDNYjTM05CziL4nQqbHvGmJnEOcyONIwWSjACTs1BA3k_cFQ4iGosbDN4jHOHzX0GCQGnNSDEFt_v2LzCiAIwuZrsIXAY3pzQ-zaAdNdj3S3agVkr50Q9wvDP3ICPIDIkQxWfejCjTHh8fW09n5dKeCAg-QF1Qv4ssfg8G0LJ7vy1BzGBBmY4S92G42JWNoH_2_xZPcIlAvEyUvpH6ilfO4LsEHFvnz5jzXeTFufLdDaGT0t-wma6xDx3-sf4vHCscXDAZ2p0j3DE3tkbo4qkOsvNr61kSKLAYK4qqpqELv4RZyd39krx9XTDY6sm7PIs-9KNnnXVnd76_ZBZ9CbVrvx2CLoYcVQGKRTH_5cxcl0A_OAjUUll4ouzeJbOmrbaRD8ePr9fZqIn9wmJULYtI1KBZxnIKznqLXh0gN0OdX8SnckInFpRI"
+      }, {
+        "description" : "",
+        "name" : "destination.created.order.sftp.path",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "VinayakTest/created/"
+      }, {
+        "description" : "",
+        "name" : "destination.digital.goods.order.sftp.path",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "VinayakTest/digital/"
+      }, {
+        "description" : "",
+        "name" : "destination.pos.cash.order.sftp.path",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "VinayakTest/pos/"
+      }, {
+        "description" : "",
+        "name" : "destination.sftp.home.path",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "/home/dev-test-sftp/"
+      }, {
+        "description" : "",
+        "name" : "feed.fileName.withPrefix.createdOrders",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "createdorders.csv\n"
+      }, {
+        "description" : "",
+        "name" : "feed.fileName.withPrefix.digitalOrders",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "DigitalOrders.csv"
+      }, {
+        "description" : "",
+        "name" : "feed.fileName.withPrefix.posOrders",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "posOrders.csv"
+      }, {
+        "description" : "",
+        "name" : "fromdate",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "12-01-2023"
+      }, {
+        "description" : "",
+        "name" : "payment_type_mappings",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "CAPTURE:PAYMENT_SETTLED|SALE:PAYMENT_SETTLED|AUTHORIZATION:PAYMENT_AUTHORIZED|VOID:PAYMENT_CANCELLED|REFUND:PAYMENT_REFUNDED"
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "cn=gaurav.kadaskar,cn=users,dc=hotwax,dc=io",
+    "flowIdentifier" : "napita-dev-flow",
+    "timestamp" : 1779792633541
+  }
 }
