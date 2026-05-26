@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1779788044728,
+    "description" : "",
+    "identifier" : "Dummy-Flow",
+    "lastModifiedTimestamp" : 1779788044728,
+    "name" : "Dummy Flow",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
