@@ -41,6 +41,36 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 1
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "46aa1616-7ab9-39d5-998a-5de295f49433",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "56ba3229-56c6-3926-926d-3283416623bf",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "f8b4f973-3e32-3eba-8b2a-8ced781b2f13",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "zIndex" : 2
     } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -51,6 +81,14 @@
     "flowFileConcurrency" : "UNBOUNDED",
     "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
     "funnels" : [ {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "46aa1616-7ab9-39d5-998a-5de295f49433",
+      "position" : {
+        "x" : 185.00006436452668,
+        "y" : -18.600677938270962
+      }
+    }, {
       "componentType" : "FUNNEL",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "f8b4f973-3e32-3eba-8b2a-8ced781b2f13",
@@ -171,6 +209,6 @@
   "snapshotMetadata" : {
     "author" : "test",
     "flowIdentifier" : "Test",
-    "timestamp" : 1779787807609
+    "timestamp" : 1779787958658
   }
 }
