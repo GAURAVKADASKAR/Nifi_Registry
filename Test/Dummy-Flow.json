@@ -28,6 +28,14 @@
         "x" : -214.99967015628863,
         "y" : -163.60066964204646
       }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d32acb32-d623-315a-be9e-026a15f08ca5",
+      "position" : {
+        "x" : 179.00032984371137,
+        "y" : -97.60066964204646
+      }
     } ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
@@ -52,6 +60,6 @@
   "snapshotMetadata" : {
     "author" : "test",
     "flowIdentifier" : "Dummy-Flow",
-    "timestamp" : 1779788046416
+    "timestamp" : 1779788755867
   }
 }
